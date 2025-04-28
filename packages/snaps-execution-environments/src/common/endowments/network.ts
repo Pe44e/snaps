@@ -256,11 +256,12 @@ const createNetwork = ({ notify }: EndowmentFactoryOptions = {}) => {
         } finally {
           if (openFetchConnection !== undefined) {
             openConnections.delete(openFetchConnection);
+
+            await notify({
+              method: 'OutboundResponse',
+              params: { source: 'fetch' },
+            });
           }
-          await notify({
-            method: 'OutboundResponse',
-            params: { source: 'fetch' },
-          });
         }
 
         if (res.body !== null) {
