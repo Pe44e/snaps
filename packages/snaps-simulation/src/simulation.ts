@@ -541,14 +541,12 @@ export function registerActions(
   options: SimulationOptions,
   snapId: SnapId,
 ) {
-  // TODO: Undo the changes in this file once you can unregister/register globally for tests
-
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'PhishingController:testOrigin',
     () => ({ result: false, type: PhishingDetectorResultType.All }),
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'AccountsController:getAccountByAddress',
     // @ts-expect-error - This is a partial account with only the necessary
     // data used by the interface controller.
@@ -565,7 +563,7 @@ export function registerActions(
     },
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'AccountsController:getSelectedMultichainAccount',
     // @ts-expect-error - This is a partial account with only the necessary
     // data used by the interface controller.
@@ -582,7 +580,7 @@ export function registerActions(
     },
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'AccountsController:listMultichainAccounts',
 
     () =>
@@ -593,7 +591,7 @@ export function registerActions(
       ),
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'MultichainAssetsController:getState',
     () => ({
       // @ts-expect-error - These are partial assets with only the
@@ -609,7 +607,7 @@ export function registerActions(
     }),
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'ApprovalController:hasRequest',
     (opts) => {
       /**
@@ -633,7 +631,7 @@ export function registerActions(
     },
   );
 
-  controllerMessenger._internalRegisterDelegatedActionHandler(
+  controllerMessenger.registerActionHandler(
     'ApprovalController:acceptRequest',
     async (_id: string, value: unknown) => {
       await runSaga(resolveWithSaga, value).toPromise();
