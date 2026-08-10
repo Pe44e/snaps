@@ -1,4 +1,5 @@
 import { rpcErrors } from '@metamask/rpc-errors';
+import type { OriginMetadata } from '@metamask/snaps-sdk';
 import { HandlerType } from '@metamask/snaps-utils';
 import type { Struct } from '@metamask/superstruct';
 import { validate } from '@metamask/superstruct';
@@ -52,12 +53,14 @@ export function assertCommandParams<Type extends Json | undefined, Schema>(
  * @param origin - The origin of the request.
  * @param handler - The handler to pass the request to.
  * @param request - The request object.
+ * @param originMetadata - The optional metadata for the origin of the request.
  * @returns The formatted arguments.
  */
 export function getHandlerArguments(
   origin: string,
   handler: HandlerType,
   request: JsonRpcRequestWithoutId,
+  originMetadata: OriginMetadata | undefined | null = null,
 ): InvokeSnapArgs {
   // `request` is already validated by the time this function is called.
 
@@ -125,7 +128,7 @@ export function getHandlerArguments(
       assertIsOnProtocolRequestArguments(request.params);
 
       const { request: nestedRequest, scope } = request.params;
-      return { origin, request: nestedRequest, scope };
+      return { origin, originMetadata, request: nestedRequest, scope };
     }
 
     case HandlerType.OnWebSocketEvent: {
@@ -136,7 +139,7 @@ export function getHandlerArguments(
 
     case HandlerType.OnRpcRequest:
     case HandlerType.OnKeyringRequest:
-      return { origin, request };
+      return { origin, originMetadata, request };
 
     case HandlerType.OnClientRequest:
     case HandlerType.OnCronjob:
@@ -147,7 +150,7 @@ export function getHandlerArguments(
     case HandlerType.OnStart:
     case HandlerType.OnActive:
     case HandlerType.OnInactive:
-      return { origin };
+      return { origin, originMetadata };
 
     case HandlerType.OnHomePage:
     case HandlerType.OnSettingsPage:

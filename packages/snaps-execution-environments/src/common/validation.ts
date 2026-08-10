@@ -4,6 +4,7 @@ import {
   literal as customLiteral,
   typedUnion,
   UserInputEventStruct,
+  OriginMetadataStruct,
 } from '@metamask/snaps-sdk';
 import { HandlerType } from '@metamask/snaps-utils';
 import type { Infer, Struct } from '@metamask/superstruct';
@@ -85,6 +86,7 @@ export const SnapRpcRequestArgumentsStruct = object({
   snapId: string(),
   handler: enums(Object.values(HandlerType)),
   origin: string(),
+  originMetadata: optional(nullable(OriginMetadataStruct)),
   request: assign(
     JsonRpcRequestWithoutIdStruct,
     object({
