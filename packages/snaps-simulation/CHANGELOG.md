@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [4.3.1]
+
+### Changed
+
+- Bump `@metamask/snaps-sdk` from `^11.2.0` to `^12.0.0` ([#4094](https://github.com/MetaMask/snaps/pull/4094))
+
 ## [4.3.0]
 
 ### Added
@@ -329,7 +335,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release of `@metamask/snaps-simulation` package ([#2727](https://github.com/MetaMask/snaps/pull/2727))
 
-[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.3.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.3.1...HEAD
+[4.3.1]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.3.0...@metamask/snaps-simulation@4.3.1
 [4.3.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.2.0...@metamask/snaps-simulation@4.3.0
 [4.2.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.1.4...@metamask/snaps-simulation@4.2.0
 [4.1.4]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-simulation@4.1.3...@metamask/snaps-simulation@4.1.4

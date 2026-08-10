@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [12.0.0]
+
+### Added
+
+- **BREAKING:** `KeyringRequest` may now include an optional `originMetadata` property
+  - This requires `@metamask/keyring-api` version `24.1.0` or newer.
+- Add support for the optional `originMetadata` property to all handlers that also support `origin` ([#4093](https://github.com/MetaMask/snaps/pull/4093))
+
 ## [11.2.0]
 
 ### Added
@@ -738,7 +746,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Initial release of this package.
 
-[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@11.2.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@12.0.0...HEAD
+[12.0.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@11.2.0...@metamask/snaps-sdk@12.0.0
 [11.2.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@11.1.1...@metamask/snaps-sdk@11.2.0
 [11.1.1]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@11.1.0...@metamask/snaps-sdk@11.1.1
 [11.1.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-sdk@11.0.0...@metamask/snaps-sdk@11.1.0

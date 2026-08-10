@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [21.1.0]
+
+### Added
+
+- Add optional `originMetadata` parameter to `SnapController`, `MultichainRoutingService` and `ExecutionService` ([#4093](https://github.com/MetaMask/snaps/pull/4093))
+  - This parameter can be used for specifying additional metadata about the origin of a request.
+
+### Changed
+
+- Bump `@metamask/messenger` from `^1.2.0` to `^2.0.0` ([#4064](https://github.com/MetaMask/snaps/pull/4064))
+- Bump `@metamask/superstruct` from `^3.2.1` to `^3.3.0` ([#4062](https://github.com/MetaMask/snaps/pull/4062))
+- Bump `@metamask/analytics-controller` from `^1.1.1` to `^1.2.1` ([#4059](https://github.com/MetaMask/snaps/pull/4059))
+
 ## [21.0.0]
 
 ### Added
@@ -1256,7 +1269,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - The version of the package no longer needs to match the version of all other
     MetaMask Snaps packages.
 
-[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@21.0.0...HEAD
+[Unreleased]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@21.1.0...HEAD
+[21.1.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@21.0.0...@metamask/snaps-controllers@21.1.0
 [21.0.0]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@20.0.6...@metamask/snaps-controllers@21.0.0
 [20.0.6]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@20.0.5...@metamask/snaps-controllers@20.0.6
 [20.0.5]: https://github.com/MetaMask/snaps/compare/@metamask/snaps-controllers@20.0.4...@metamask/snaps-controllers@20.0.5
